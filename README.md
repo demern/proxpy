@@ -33,3 +33,7 @@ Output
 Card images are cached under `./card_images`  (`.` being CWD)
 
 Sheets are saved to `./sheets`
+
+Sheets look like this:
+
+![Example Sheet](https://github.com/demern/proxpy/blob/master/examples/sheets/sheet1.png)
