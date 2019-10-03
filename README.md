@@ -31,4 +31,5 @@ Output
 ------
 
 Card images are cached under `./card_images`  (`.` being CWD)
+
 Sheets are saved to `./sheets`
