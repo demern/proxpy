@@ -16,7 +16,7 @@ Dependencies
 Usage
 -----
 
-./proxpy <input file>
+`./proxpy <input file>`
 
 Input files should be a list of cards, one per line, prefixed by a number
 and a space. For example:
