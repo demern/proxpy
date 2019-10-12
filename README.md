@@ -25,7 +25,7 @@ and a space. For example:
 ```
 1 Skullclamp
 2 Wrenn and Six
-1 Bonecrusher Giant // Stomp
+1 Bonecrusher Giant
 ```
 
 Output
