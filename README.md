@@ -5,7 +5,7 @@ proxpy
 proxy card images. It downloads the necessary images from Scryfall and
 caches them locally, then generates sheets of card images to print.
 
-Still developing + tweaking, stay tuned.
+Still tweaking it, stay tuned.
 
 Dependencies
 ------------
@@ -35,7 +35,7 @@ Card images are cached under the system's user appdata directory:
 
   - Linux: `~/.local/share/proxpy/card_images`
   - MacOS: `~/Library/Application Support/proxpy/card_images`
-  - Windows: `C:\Users\<user>\AppData\Local\proxpy\proxpy`
+  - Windows: `C:\Users\<user>\AppData\Local\proxpy\proxpy\card_images`
 
 Sheets are saved to the current working directory and are numbered.
 
