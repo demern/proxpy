@@ -8,14 +8,6 @@ import shutil
 import sys
 import time
 
-# TODO: If I ever have the time/motivation...
-# - Allow user to optionally specify Set for cards in input file
-# - Well-integrated support for custom cards?
-# - Help/usage message
-# - Generating a (full) sheet takes a while, maybe it can be sped up somehow.
-# - Gracefully handle cleanup on interruption/error exit.
-# - Certain cardnames can trip up the script still (like 'Bonecrusher Giant // Stomp'). Need more robust handling for that and other edge cases.
-
 # Directories for application data
 images_dir=os.path.join(appdirs.user_data_dir("proxpy","proxpy"),"card_images")
 
