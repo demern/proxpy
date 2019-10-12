@@ -12,6 +12,7 @@ Dependencies
 
   - `python3-pil`
   - `python3-requests`
+  - `python3-appdirs`
 
 Usage
 -----
@@ -30,9 +31,13 @@ and a space. For example:
 Output
 ------
 
-Card images are cached under `./card_images`  (`.` being CWD)
+Card images are cached under the system's user appdata directory:
 
-Sheets are saved to `./sheets`
+  - Linux: `~/.local/share/proxpy/card_images`
+  - MacOS: `~/Library/Application Support/proxpy/card_images`
+  - Windows: `C:\Users\<user>\AppData\Local\proxpy\proxpy`
+
+Sheets are saved to the current working directory and are numbered.
 
 Sheets look like this:
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from PIL import Image
+import appdirs
 import os
 import requests
 import shutil
@@ -14,8 +15,11 @@ import time
 # - Generating a (full) sheet takes a while, maybe it can be sped up somehow.
 # - Gracefully handle cleanup on interruption/error exit.
 
+# Directories for application data
+images_dir=os.path.join(appdirs.user_data_dir("proxpy","proxpy"),"card_images")
+
 # Given a cardname, download the image from Scryfall
-def download_card(cardname, outdir=os.path.join(os.path.curdir, "card_images")):
+def download_card(cardname, outdir=images_dir):
     linkname = cardname.replace(" ", "+").lower()
     outname = cardname.replace(" ", "_") + ".png"
     outfile = os.path.join(outdir, outname)
@@ -33,7 +37,7 @@ def download_card(cardname, outdir=os.path.join(os.path.curdir, "card_images")):
     r = requests.get(URI, stream=True)
     if r.status_code == 200:
         if not os.path.exists(outdir):
-            os.mkdir(outdir)
+            os.makedirs(outdir, exist_ok=True)
         with open(outfile, 'wb+') as f:
             # Write image file
             shutil.copyfileobj(r.raw, f)
@@ -49,7 +53,7 @@ def download_card(cardname, outdir=os.path.join(os.path.curdir, "card_images")):
 # Create sheets (with maximum of 9 cards per sheet)
 # 'image_list' is a list of file paths which are images generated via 
 # the 'download_card' function.
-def create_sheets(image_list, outdir=os.path.join(os.path.curdir, "sheets")):
+def create_sheets(image_list, outdir=os.path.curdir):
     space = 15
     card_w = 791
     card_h = 1107
