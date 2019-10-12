@@ -7,6 +7,13 @@ import shutil
 import sys
 import time
 
+# TODO: If I ever have the time/motivation...
+# - Allow user to optionally specify Set for cards in input file
+# - Well-integrated support for custom cards?
+# - Help/usage message
+# - Generating a (full) sheet takes a while, maybe it can be sped up somehow.
+# - Gracefully handle cleanup on interruption/error exit.
+
 # Given a cardname, download the image from Scryfall
 def download_card(cardname, outdir=os.path.join(os.path.curdir, "card_images")):
     linkname = cardname.replace(" ", "+").lower()
@@ -17,7 +24,7 @@ def download_card(cardname, outdir=os.path.join(os.path.curdir, "card_images")):
         print("Card image for {} already exists at {}.".format(cardname,outfile))
         return outfile
 
-    # Per Scryfall's courtesy request, insert a 0.1 second delay between requests
+    # Per Scryfall's request, insert a 0.1 second delay between downloads
     time.sleep(0.1)
 
     # Request card image
@@ -57,7 +64,7 @@ def create_sheets(image_list, outdir=os.path.join(os.path.curdir, "sheets")):
 
     # Fit 9 images per sheet, generate the required
     # number of sheets to exhaust the input list.
-    for i in range(0, int(len(image_list)/9 + 1)):
+    for i in range(0, len(image_list)//9 + 1):
         print("Generating sheet {}...".format(i+1))
         sheetname = "sheet{}.png".format(i+1)
         outfile = os.path.join(outdir, sheetname)
