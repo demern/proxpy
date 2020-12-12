@@ -87,15 +87,14 @@ class ProxyMaker():
             for j in range(first, last):
                 # We hit the end, bye
                 if j == len(image_list):
-                    print("Sheet {} saved to {}.".format(i+1, outfile))
-                    return 0
+                    break
 
                 # Paste card image into sheet at appropriate offset
                 card_image = Image.open(image_list[j], 'r')
                 offset_w = int(border_w + (j%3) * (card_w + space)) 
                 offset_h = int(border_h + ((j - 9*i)//3) * (card_h + space))
                 empty_sheet.paste(card_image, (offset_w, offset_h))
-                empty_sheet.save(outfile, dpi=(315,315))
+            empty_sheet.save(outfile, dpi=(315,315))
             print("Sheet {} saved to {}.".format(i+1, outfile))
 
     # Parse a file containing a list of cardnames and download images for
