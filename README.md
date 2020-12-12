@@ -7,17 +7,31 @@ caches them locally, then generates sheets of card images to print.
 
 Still tweaking it, stay tuned.
 
-Dependencies
-------------
+Install
+-------
 
-  - `python3-pil`
-  - `python3-requests`
-  - `python3-appdirs`
+1. As root/administrator: `./setup.py install`
+
 
 Usage
 -----
 
-`./proxpy <input file>`
+```
+usage: proxpy [-h] [-c CACHE_DIR] [-o OUTPUT_DIR] [-n] input
+
+Simple utility for generating sheets of MtG proxies.
+
+positional arguments:
+  input
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CACHE_DIR, --cache-dir CACHE_DIR
+                        Specify directory for storing and retreiving cached images.
+  -o OUTPUT_DIR, --output-dir OUTPUT_DIR
+                        Specify directory for output sheet files.
+  -n, --no-cache        Do not use the cache directory; download all images.
+```
 
 Input files should be a list of cards, one per line, prefixed by a number
 and a space. For example:
