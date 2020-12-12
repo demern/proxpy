@@ -51,7 +51,7 @@ Card images are cached under the system's user appdata directory:
   - MacOS: `~/Library/Application Support/proxpy/card_images`
   - Windows: `C:\Users\<user>\AppData\Local\proxpy\proxpy\card_images`
 
-Sheets are saved to the current working directory and are numbered.
+Sheets are saved to the current working directory by default, but this can be overriden with the `-o` option (see above). All sheets are numbered.
 
 Sheets look like this:
 
