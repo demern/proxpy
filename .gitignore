@@ -1,2 +1,4 @@
-card_images
 sheet*
+build
+dist
+*egg-info*

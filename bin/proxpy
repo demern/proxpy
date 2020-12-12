@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+
+import appdirs
+import argparse
+import os
+import proxpy.ProxyMaker as proxpy
+
+parser = argparse.ArgumentParser(description='Simple utility for generating sheets of MtG proxies.')
+parser.add_argument('-c', '--cache-dir', action='store',\
+                    help='Specify directory for storing and retreiving cached images.')
+parser.add_argument('-o', '--output-dir', action='store',\
+                    help='Specify directory for output sheet files.')
+parser.add_argument('-n', '--no-cache', action='store_true',\
+                    help='Do not use the cache directory; download all images.')
+parser.add_argument('input', type=str) 
+args = parser.parse_args()
+
+
+# Override default cache/output dirs if specified
+if args.cache_dir:
+    cache_dir = args.cache_dir
+else:
+    cache_dir = os.path.join(appdirs.user_data_dir("proxpy","proxpy"),"card_images")
+if args.output_dir:
+    output_dir = args.output_dir
+else:
+    output_dir = os.getcwd()
+
+# Must specify input file with list of cards
+if not os.path.isfile(args.input):
+    parser.error('\'input\' argument must be a file.')
+    
+proxy_maker = proxpy.ProxyMaker(cache_dir, output_dir, no_cache=args.no_cache)
+proxy_maker.process_input(args.input)
+
