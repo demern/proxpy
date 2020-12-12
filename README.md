@@ -5,7 +5,7 @@ proxpy
 proxy card images. It downloads the necessary images from Scryfall and
 caches them locally, then generates sheets of card images to print.
 
-Still tweaking it, stay tuned.
+Still tweaking it, stay tuned. Cross-platform compatibility is definitely a goal but not confirmed right now. So far I've only tested this works on Linux (Fedora 32/Centos 7/WSL). 
 
 Install
 -------
@@ -45,11 +45,13 @@ and a space. For example:
 Output
 ------
 
-Card images are cached under the system's user appdata directory:
+Card images are cached under the system's user appdata directory by default:
 
   - Linux: `~/.local/share/proxpy/card_images`
   - MacOS: `~/Library/Application Support/proxpy/card_images`
   - Windows: `C:\Users\<user>\AppData\Local\proxpy\proxpy\card_images`
+
+This location can be overriden on a per-run (not persistent) basis via the `-c` option (see above).
 
 Sheets are saved to the current working directory by default, but this can be overriden with the `-o` option (see above). All sheets are numbered.
 
