@@ -37,9 +37,15 @@ Input files should be a list of cards, one per line, prefixed by a number
 and a space. For example:
 
 ```
+1 Legion Loyalist
+1 Assassin's Trophy
+1 Questing Beast
+1 Murderous Rider
+1 Brazen Borrower
+1 Prismatic Vista
+1 Once Upon a Time
+1 Wrenn and Six
 1 Skullclamp
-2 Wrenn and Six
-1 Bonecrusher Giant
 ```
 
 Output
