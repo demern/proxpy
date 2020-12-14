@@ -73,7 +73,7 @@ class ProxyMaker():
 
         # Fit 9 images per sheet, generate the required
         # number of sheets to exhaust the input list.
-        for i in range(0, len(image_list)//9 + 1):
+        for i in range(0, (len(image_list)-1)//9 + 1):
             print("Generating sheet {}...".format(i+1))
             sheetname = "sheet{}.png".format(i+1)
             outfile = os.path.join(self.output_dir, sheetname)
