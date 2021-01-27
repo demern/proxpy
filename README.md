@@ -3,7 +3,9 @@ proxpy
 
 `proxpy` is a simple script for generating sheets of Magic: The Gathering
 proxy card images. It downloads the necessary images from Scryfall and
-caches them locally, then generates sheets of card images to print.
+caches them locally, then generates sheets of card images.
+
+NOTE: These card images are the property of Wizards of the Coast. This tool is only meant to be used for casual play and testing at home!
 
 Still tweaking it, stay tuned. Cross-platform compatibility is definitely a goal but not confirmed right now. So far I've only tested this works on Linux (Fedora 32/Centos 7/WSL). 
 
